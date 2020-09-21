@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './App.css';
 import Jokes from "./components/jokes";
 
-
 class App extends Component {
 
     state = {
@@ -13,7 +12,7 @@ class App extends Component {
         fetch('https://api.punkapi.com/v2/beers/random')
             .then(res => res.json())
             .then((data) => {
-                this.setState({ contacts: data })
+                this.setState({contacts: data})
             })
             .catch(console.log)
     }
@@ -21,7 +20,7 @@ class App extends Component {
     render() {
         return (
             <React.Fragment>
-                <Jokes contacts={this.state.contacts} />
+                <Jokes contacts={this.state.contacts}/>
             </React.Fragment>
 
         );

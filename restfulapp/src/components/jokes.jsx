@@ -10,6 +10,7 @@ import Table from "@material-ui/core/Table";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
+import TableBody from "@material-ui/core/TableBody";
 
 const Jokes = ({contacts}) => {
     return (
@@ -40,7 +41,7 @@ const Jokes = ({contacts}) => {
                                             />
                                         </Grid>
                                         <Grid item md={12}>
-                                            <TableContainer component={Paper}>
+                                            <TableContainer component={Paper} style={{marginBottom:20}}>
                                                 <Table>
                                                     <TableHead>
                                                         <TableRow>
@@ -76,8 +77,40 @@ const Jokes = ({contacts}) => {
                                                             }}>attenuation</TableCell>
                                                         </TableRow>
                                                     </TableHead>
+                                                    <TableBody>
+                                                        <TableRow>
+                                                            <TableCell>
+                                                                {contact.abv}
+                                                            </TableCell>
+                                                            <TableCell>
+                                                                {contact.ibu}
+                                                            </TableCell>
+                                                            <TableCell>
+                                                                {contact.target_fg}
+                                                            </TableCell>
+                                                            <TableCell>
+                                                                {contact.target_og}
+                                                            </TableCell>
+                                                            <TableCell>
+                                                                {contact.ebc}
+                                                            </TableCell>
+                                                            <TableCell>
+                                                                {contact.srm}
+                                                            </TableCell>
+                                                            <TableCell>
+                                                                {contact.ph}
+                                                            </TableCell>
+                                                            <TableCell>
+                                                                {contact.attenuation_level}
+                                                            </TableCell>
+                                                        </TableRow>
+                                                    </TableBody>
                                                 </Table>
                                             </TableContainer>
+                                            <Typography variant='h6' gutterBottom>Food pairing</Typography>
+                                            <Typography variant='body1' gutterBottom>{contact.food_pairing}</Typography>
+                                            <Typography variant='h6' gutterBottom>Brewers tips</Typography>
+                                            <Typography variant='body1' gutterBottom>{contact.brewers_tips}</Typography>
                                         </Grid>
                                     </Grid>
                                 </CardContent>
