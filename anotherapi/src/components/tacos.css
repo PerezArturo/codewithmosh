@@ -1,0 +1,19 @@
+
+.logo {
+    width: 120px;
+    height: 31px;
+    margin: 16px 24px 16px 0;
+    float: left;
+}
+.logo-text{
+    color: white !important;
+    font-weight: bold !important;
+}
+
+.site-card-border-less-wrapper {
+    padding: 30px;
+}
+
+.question{
+    font-weight: bold !important;
+}
