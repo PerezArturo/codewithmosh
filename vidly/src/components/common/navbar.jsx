@@ -5,8 +5,8 @@ class NavBar extends Component {
 
     render() {
         return (
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <Link className="navbar-brand" to="/">Vidly</Link>
+            <nav className="navbar navbar-expand-lg">
+                <Link className="navbar-brand" to="/" style={{ fontSize: '2rem' }}>Vidly</Link>
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -21,21 +21,35 @@ class NavBar extends Component {
                     <div className="navbar-nav">
                         <NavLink className="nav-item nav-link" to="/movies" activeStyle={{
                             fontWeight: "bold",
-                            color: "white"
+                            color: "#007bff"
                         }}>
                             Movies
                         </NavLink>
                         <NavLink className="nav-item nav-link" to="/customers" activeStyle={{
                             fontWeight: "bold",
-                            color: "white"
+                            color: "#007bff"
                         }}>
                             Customers
                         </NavLink>
                         <NavLink className="nav-item nav-link" to="/rentals" activeStyle={{
                             fontWeight: "bold",
-                            color: "white"
+                            color: "#007bff"
                         }}>
                             Rentals
+                        </NavLink>
+                    </div>
+                    <div className="navbar-nav ml-auto">
+                        <NavLink className="nav-item nav-link" to="/login" activeStyle={{
+                            fontWeight: "bold",
+                            color: "#007bff"
+                        }}>
+                            Login
+                        </NavLink>
+                        <NavLink className="nav-item nav-link" to="/register" activeStyle={{
+                            fontWeight: "bold",
+                            color: "#007bff"
+                        }}>
+                            Register
                         </NavLink>
                     </div>
                 </div>

@@ -1,13 +1,15 @@
 import React from "react";
 import { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
-import "./App.css";
 import Movies from "./components/movies";
 import NavBar from './components/common/navbar';
 import Customers from "./components/customers";
 import NotFound from "./components/notfound";
 import MovieForm from "./components/movieform";
 import Rentals from "./components/rentals";
+import LoginForm from "./components/common/loginForm";
+import RegisterForm from "./components/common/registerForm";
+import "./App.css";
 
 
 class App extends Component {
@@ -17,6 +19,8 @@ class App extends Component {
         <NavBar />
         <main role="main" className="container mt-3">
           <Switch>
+            <Route path="/register" component={RegisterForm} />
+            <Route path="/login" component={LoginForm} />
             <Route path="/movies/:id" component={MovieForm} />
             <Route path="/movies" component={Movies} />
             <Route path="/customers" component={Customers} />
