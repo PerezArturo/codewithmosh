@@ -1,3 +1,6 @@
 [submodule "counterApp"]
 	path = counterApp
 	url = https://github.com/PerezArturo/counterApp.git
+[submodule "vidly-api-node"]
+	path = vidly-api-node
+	url = ../../mosh-hamedani/vidly-api-node.git
