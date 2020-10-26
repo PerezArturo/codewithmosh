@@ -1,0 +1,4 @@
+{
+    "apiEndpoint": "https://jsonplaceholder.typicode.com/posts",
+    "logger_dsn": "https://9f8eee1f44744981abe34d326550a391@o466334.ingest.sentry.io/5480515"
+}
