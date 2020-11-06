@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Grid, Button } from "@material-ui/core";
 import { getMovies, deleteMovie } from "../services/movieService";
 import { getGenres } from "../services/genreService";
 import ListGroup from "./common/listGroup";
@@ -116,18 +117,24 @@ class Movies extends Component {
             🎥
           </span>{" "}
         </h1>
-        <div className="row">
-          <div className="col-md-2">
+        <Grid container spacing={3}>
+          <Grid item md={2}>
             <ListGroup
               items={genres}
               selectedItem={selectedGenre}
               onItemSelect={this.handleGenreSelect}
             />
-          </div>
-          <div className="col-md">
+          </Grid>
+          <Grid item md={10}>
             {user && (
-              <Link to="movies/new" className="btn btn-primary mb-3">
-                New Movie
+              <Link to="movies/new">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  disableElevation={true}
+                  style={{ marginBottom: "1rem" }}>
+                  New Movie
+                </Button>
               </Link>
             )}
             <p>Showing {totalCount} movies </p>
@@ -145,8 +152,8 @@ class Movies extends Component {
               currentPage={currentPage}
               onPageChange={this.handlePageChange}
             />
-          </div>
-        </div>
+          </Grid>
+        </Grid>
       </React.Fragment>
     );
   }

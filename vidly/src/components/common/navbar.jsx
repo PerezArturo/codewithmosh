@@ -1,26 +1,17 @@
 import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AppBar, Toolbar, Box, Typography } from "@material-ui/core";
 
 class NavBar extends Component {
   render() {
     const { user } = this.props;
     return (
-      <nav className="navbar navbar-expand-lg">
-        <Link className="navbar-brand" to="/" style={{ fontSize: "2rem" }}>
-          Vidly
-        </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div className="navbar-nav">
+      <AppBar position="static" style={{ background: "#fff" }} elevation={0}>
+        <Toolbar>
+          <Box display="flex" flexGrow={1}>
+            <Link className="navbar-brand" to="/" style={{ fontSize: "2rem" }}>
+              <Typography variant="h6">Vidly</Typography>
+            </Link>
             <NavLink
               className="nav-item nav-link"
               to="/movies"
@@ -48,9 +39,9 @@ class NavBar extends Component {
               }}>
               Rentals
             </NavLink>
-          </div>
+          </Box>
           {!user && (
-            <div className="navbar-nav ml-auto">
+            <React.Fragment>
               <NavLink
                 className="nav-item nav-link"
                 to="/login"
@@ -69,10 +60,10 @@ class NavBar extends Component {
                 }}>
                 Register
               </NavLink>
-            </div>
+            </React.Fragment>
           )}
           {user && (
-            <div className="navbar-nav ml-auto">
+            <React.Fragment>
               <NavLink
                 className="nav-item nav-link"
                 to="/profile"
@@ -91,10 +82,10 @@ class NavBar extends Component {
                 }}>
                 Logout
               </NavLink>
-            </div>
+            </React.Fragment>
           )}
-        </div>
-      </nav>
+        </Toolbar>
+      </AppBar>
     );
   }
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { Container } from "@material-ui/core";
 import Movies from "./components/movies";
 import NavBar from "./components/common/navbar";
 import Customers from "./components/customers";
@@ -30,7 +31,7 @@ class App extends Component {
       <React.Fragment>
         <ToastContainer />
         <NavBar user={user} />
-        <main role="main" className="container mt-3">
+        <Container role="main" className="mt-3">
           <Switch>
             <Route path="/register" component={RegisterForm} />
             <Route path="/login" component={LoginForm} />
@@ -46,7 +47,7 @@ class App extends Component {
             <Redirect from="/" exact to="/movies" />
             <Redirect to="/404" />
           </Switch>
-        </main>
+        </Container>
       </React.Fragment>
     );
   }
