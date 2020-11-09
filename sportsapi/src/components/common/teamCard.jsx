@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const SportCard = ({ countrie }) => {
+const TeamCard = ({ team }) => {
   return (
     <div className="card mb-3">
       <div className="card-body">
-        <Link className="card-title" to={`/england/${countrie.idLeague}`}>
+        {/* <Link className="card-title" to={`/england/${countrie.idLeague}`}>
           <span>
             <img
               src={countrie.strBadge}
@@ -24,10 +24,10 @@ const SportCard = ({ countrie }) => {
         <p className="card-text">
           <span className="font-weight-bold">Since:</span>
           {countrie.intFormedYear}
-        </p>
+        </p> */}
       </div>
     </div>
   );
 };
 
-export default SportCard;
+export default TeamCard;

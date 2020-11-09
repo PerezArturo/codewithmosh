@@ -19,12 +19,14 @@ const Soccer = () => {
   return (
     <>
       <h1 className="text-center font-weight-bold mb-5">English Soccer</h1>
-      {countrys &&
-        countrys
-          .reverse()
-          .map((countrie) => (
-            <SportCard countrie={countrie} key={countrie.idLeague} />
+      <div className="row">
+        {countrys &&
+          countrys.reverse().map((countrie) => (
+            <div className="col-md-4" key={countrie.idLeague}>
+              <SportCard countrie={countrie} />
+            </div>
           ))}
+      </div>
     </>
   );
 };

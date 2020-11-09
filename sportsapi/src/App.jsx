@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import "./App.css";
+import LeagueDetails from "./components/leagueDetails";
 import Soccer from "./components/soccer";
 
 class App extends Component {
@@ -8,16 +9,17 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <main className="container mt-5">
+        <div className="container mt-5">
           <Switch>
-            <Route path="/soccer" render={(props) => <Soccer {...props} />} />
-            <Redirect from="/" exact to="/soccer" />
+            <Route
+              path="/england/:id"
+              render={(props) => <LeagueDetails {...props} />}
+            />
+            <Route path="/england" render={(props) => <Soccer {...props} />} />
+            <Redirect from="/" exact to="/england" />
           </Switch>
-        </main>
+        </div>
       </React.Fragment>
-      // <div className="container">
-      //   <h1 className="text-center font-weight-bold mt-5">Sports App</h1>
-      // </div>
     );
   }
 }
