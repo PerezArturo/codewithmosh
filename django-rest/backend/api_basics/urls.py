@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import article_list, article_detail
+from .views import GenericAPIView, ArticleDetailsApiView
 
 urlpatterns = [
-    path('article/', article_list),
-    path('article/<int:pk>', article_detail),
+    path('article/', GenericAPIView.as_view()),
+    path('article/<int:id>', GenericAPIView.as_view()),
 ]
